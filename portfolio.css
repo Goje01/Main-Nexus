@@ -1,0 +1,299 @@
+/* CSS Variables for Theme Colors */
+      :root {
+        --bg-color: #fff;
+        --primary-color: #1abc9c;
+        --secondary-color: #16a085;
+        --text-color: #333;
+        --nav-bg: rgba(0, 0, 0, 0.8);
+        --accent-color: #f39c12;
+      }
+      body.dark {
+        --bg-color: #222;
+        --primary-color: #16a085;
+        --secondary-color: #1abc9c;
+        --text-color: #ddd;
+        --nav-bg: rgba(0, 0, 0, 0.9);
+        --accent-color: #e67e22;
+      }
+
+      /* Global Resets & Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body,
+      html {
+        font-family: 'Roboto', sans-serif;
+        color: var(--text-color);
+        background: var(--bg-color);
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+      }
+      /* Enhanced Readability for Text */
+      h1,
+      h2,
+      h3 {
+        margin-bottom: 1rem;
+      }
+      p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+      }
+
+      /* Scroll Progress Bar */
+      #progress-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: rgba(0, 0, 0, 0.1);
+        z-index: 999;
+      }
+      #progress-bar {
+        height: 100%;
+        width: 0;
+        background: var(--accent-color);
+      }
+
+      /* Navigation Bar */
+      nav {
+        position: fixed;
+        top: 5px;
+        width: 100%;
+        background: var(--nav-bg);
+        padding: 1rem 2rem;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background 0.3s ease;
+      }
+      nav ul {
+        list-style: none;
+        display: flex;
+      }
+      nav ul li {
+        margin: 0 1rem;
+      }
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.1rem;
+        transition: color 0.3s ease;
+      }
+      nav ul li a:hover {
+        color: var(--accent-color);
+      }
+      #theme-toggle {
+        background: var(--accent-color);
+        color: #fff;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+      #theme-toggle:hover {
+        background: var(--secondary-color);
+      }
+
+      /* Header Section with Parallax & Animated Gradient */
+      header {
+        height: 100vh;
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        background-size: 200% 200%;
+        animation: gradientShift 10s ease infinite;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        overflow: hidden;
+        position: relative;
+      }
+      .parallax-container {
+        text-align: center;
+        animation: fadeIn 1.5s ease-in-out;
+      }
+
+      /* Elegant Fade-In Up Effect for Hero Title */
+      #hero-title {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        letter-spacing: 1px;
+        opacity: 0;
+        animation: fadeInUp 2s ease forwards;
+        color: #ffffff;
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes gradientShift {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      /* Pulsating Blob Effect in Header */
+      header::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 300px;
+        height: 300px;
+        background: var(--accent-color);
+        border-radius: 50%;
+        opacity: 0.2;
+        filter: blur(100px);
+        transform: translate(-50%, -50%);
+        z-index: -2;
+        animation: blobAnimation 8s infinite ease-in-out;
+      }
+      @keyframes blobAnimation {
+        0% {
+          transform: translate(-50%, -50%) scale(1);
+        }
+        33% {
+          transform: translate(-50%, -45%) scale(1.3);
+        }
+        66% {
+          transform: translate(-50%, -55%) scale(0.8);
+        }
+        100% {
+          transform: translate(-50%, -50%) scale(1);
+        }
+      }
+
+      /* Section Styling */
+      section {
+        padding: 4rem 2rem;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+      section.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Projects Grid */
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+      .project {
+        background: #f0f0f0;
+        padding: 1.5rem;
+        border-radius: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+      }
+      body.dark .project {
+        background: #333;
+      }
+      .project:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Contact Section with Google Form Embed */
+      section#contact {
+        padding: 4rem 1rem;
+      }
+      section#contact h2 {
+        margin-bottom: 2rem;
+      }
+      section#contact iframe {
+        border: none;
+        width: 100%;
+        height: 600px;
+        max-width: 600px;
+      }
+
+      /* Modal Styles (Unchanged) */
+      .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 1100;
+      }
+      .modal-content {
+        background: var(--bg-color);
+        padding: 2rem;
+        border-radius: 10px;
+        width: 90%;
+        max-width: 500px;
+        position: relative;
+        animation: slideDown 0.5s ease;
+      }
+      @keyframes slideDown {
+        from {
+          transform: translateY(-50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+      .modal-close {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 1.5rem;
+        color: var(--accent-color);
+        cursor: pointer;
+      }
+
+      /* Back-to-Top Button */
+      #back-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background: var(--accent-color);
+        color: #fff;
+        border: none;
+        padding: 0.75rem 1rem;
+        border-radius: 50%;
+        font-size: 1.5rem;
+        cursor: pointer;
+        display: none;
+        z-index: 1000;
+      }
+      #back-to-top:hover {
+        background: var(--secondary-color);
+      }
+    

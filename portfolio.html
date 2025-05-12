@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Goje</title>
+    <link rel="stylesheet" href="portfolio.css">
+      
+  </head>
+  <body>
+    <!-- Progress Bar -->
+    <div id="progress-container">
+      <div id="progress-bar"></div>
+    </div>
+
+    <!-- Nav Bar -->
+    <nav id="navbar">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button id="theme-toggle">Toggle Theme</button>
+    </nav>
+
+    
+    <header id="home">
+      <div class="parallax-container">
+        <h1 id="hero-title">Unleashing Limitless Possibilities</h1>
+        <p>
+          Hi there! I'm Emmanuel—a passionate web developer who thrives on creativity and innovative code.
+          This isn't just a portfolio it's a collection of experience experiment ideas late night bold moves and things i wasnt sure would work-but did
+          not just looking at what i did  you're seeing how i think 
+  
+        </p>
+      </div>
+    </header>
+
+    <!-- about -->
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        Hello, I'm Emmanuel, a creative developer based in Adamawa State, Nigeria.
+        My journey into coding began at an not so early age, and I've since transformed my passion for technology
+        into building seamless, engaging web experiences.
+      </p>
+      <p>
+        With a strong foundation in HTML, CSS, and JavaScript, I push the boundaries of web design by merging
+        aesthetics with functionality. Every project is an opportunity to learn, innovate, and create digital experiences
+        that resonate.
+      </p>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <h2>My Projects</h2>
+      <p>
+        Each project below showcases a unique blend of design and technical skill.
+        From smooth animations to fully responsive layouts, click on any project for in-depth details.
+      </p>
+      <div class="project-grid">
+        <div class="project" data-title="Project 1" data-description="Project 1 combines smooth animations with innovative design for an immersive web experience.">
+          <h3>Project 1</h3>
+          <p>Click to learn more.</p>
+        </div>
+        <div class="project" data-title="Project 2" data-description="In Project 2, interactive elements and fluid animations create a dynamic and engaging interface.">
+          <h3>Project 2</h3>
+          <p>Click to learn more.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact trying  Google Form Embed -->
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <p>
+        Got a project idea or just want to say hello? Fill out the form below.
+        Your message will be sent directly 
+      </p>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScoSLHyVRy6eA6SpRuLe9L-lyoGigCs-7d87ZRhyu9MFsiaOg/viewform?embedded=true"></iframe>
+    </section>
+
+    <!-- Modal for Project Details -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span id="modal-close" class="modal-close">&times;</span>
+        <h3 id="modal-title"></h3>
+        <p id="modal-description"></p>
+      </div>
+    </div>
+
+    <!-- Back-to-Top Button -->
+    <button id="back-to-top">↑</button>
+
+    <script src="portfolio.js"> </script>
+  </body>
+</html>
